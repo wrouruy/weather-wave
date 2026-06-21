@@ -1,12 +1,10 @@
-## How to Use the App?
-1. Clone the repository: ``` git clone https://github.com/wrouruy/WeatherWave.git && cd WeatherWave ```
-2. Install libraries:
+## Installing and Use
+1. clone the repo: ``` git clone https://github.com/wrouruy/weather-wave.git && cd weather-wave ```
+2. install [cjson](https://github.com/davegamble/cjson) and [curl](https://curl.se/docs/install.html) libraries
+3. compile the code: ``` gcc main.c -o weather-wave -lcurl -lcjson ```
+4. make it global(optional): ``` sudo ln -s $PWD/weather-wave /usr/local/bin/weather-wave```
+
+All done! you can use it like:
 ```
-apt     : sudo apt install libcurl4-openssl-dev libcjson-dev
-pacman  : sudo pacman -S curl cjson
-dnf     : sudo dnf install libcurl-devel cjson-devel
-brew    : brew install curl
+$ weather-wave "your-city"
 ```
-3. Compile the code: ``` clang -o WeatherWave main.c -lcurl -lcjson ```
-4. Run the compiled code: ``` ./WeatherWave "your city" ```
-   
