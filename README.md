@@ -1,10 +1,22 @@
-## Installing and Use
-1. clone the repo: ``` git clone https://github.com/wrouruy/weather-wave.git && cd weather-wave ```
-2. install [cjson](https://github.com/davegamble/cjson) and [curl](https://curl.se/docs/install.html) libraries
-3. compile the code: ``` gcc main.c -o weather-wave -lcurl -lcjson ```
-4. make it global(optional): ``` sudo ln -s $PWD/weather-wave /usr/local/bin/weather-wave```
+# Weather wave
+<details>
+  <summary><strong>Requirements</strong></summary>
+  <ul>
+    <li><a>GCC 10+</a></li>
+    <li>C 17</li>
+    <li><a href="https://github.com/davegamble/cjson">cJSON library</a></li>
+    <li><a href="https://curl.se/docs/install.html">curl library</a></li>
+  </ul>
+</details>
 
-All done! you can use it like:
+### Compilation and Usage
+```shell
+make
+./weather-wave "enter your city"
 ```
-$ weather-wave "your-city"
+
+### Global Installation
+```shell
+sudo make install
+sudo make uninstall
 ```
