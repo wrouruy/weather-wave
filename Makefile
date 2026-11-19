@@ -1,6 +1,7 @@
 CC=gcc
 CCFLAGS=-std=c17 -Wall -Wextra -lcurl -lcjson
 TARGET=weather-wave
+PREFIX=/usr/local
 
 SRC=main.c
 OBJ=$(SRC:.c=.o)
@@ -14,3 +15,9 @@ $(TARGET): $(OBJ)
 
 clean:
 	rm -f $(OBJ) $(TARGET)
+
+install: $(TARGET)
+	install -Dm755 $(TARGET) $(PREFIX)/bin/$(TARGET)
+
+uninstall:
+	rm -f $(PREFIX)/bin/$(TARGET)
